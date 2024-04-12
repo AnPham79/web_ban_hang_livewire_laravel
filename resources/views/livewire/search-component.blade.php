@@ -54,9 +54,8 @@
                         </div>
 
                     </div><!--end wrap shop control-->
-
+                    @if($data->count() > 0)
                     <div class="row">
-
                         <ul class="product-list grid-products equal-container">
                             @foreach ($data as $item)
                                 <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
@@ -76,9 +75,10 @@
                                 </li>
                             @endforeach
                         </ul>
-
                     </div>
-
+                    @else
+                        <p style="padding-top: 30px">No Products</p>
+                    @endif
                     <div class="wrap-pagination-info">
                         {{ $data->links() }}
                         {{-- <ul class="page-numbers">

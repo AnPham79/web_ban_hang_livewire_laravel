@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Product;
+use cart;
+use Livewire\WithPagination;
 
 class DetailComponent extends Component
 {
@@ -13,6 +15,14 @@ class DetailComponent extends Component
     // mout là 1 phương thức mạnh của livewire cung cấp
     public function mount($slug) {
         $this->slug = $slug;
+    }
+
+    use WithPagination;
+
+    public function store($product_id, $product_name, $product_price) {
+        Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        session()->flash('success_message', 'Item added in cart');
+        return redirect()->route('product.cart');
     }
 
     public function render()
@@ -25,7 +35,6 @@ class DetailComponent extends Component
             'data' => $data,
             'popular_products' => $popular_products,
             'related_products' => $related_products
-        ])
-        ->layout('layouts.base');
+        ])->layout('layouts.base');
     }
 }

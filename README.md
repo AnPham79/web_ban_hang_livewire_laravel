@@ -37,3 +37,14 @@ chạy lệnh Artisan:
  - trong đó 
  + --provider="Gloudeman\ShoppingcardServiceProvider": Xác định ServiceProvider của gói bạn muốn xuất bản tài nguyên từ đó. Trong trường hợp này, đó là ServiceProvider của gói "Shopping Cart" (giỏ hàng) từ Gloudemans.
  + --tag="config": Xác định loại tài nguyên bạn muốn xuất bản. Trong trường hợp này, đó là các tài nguyên cấu hình của gói "Shopping Cart".
+ - tạo hàm sử lí thêm vào giỏ hàng
+ - tạo hàm sử lí tăng giảm số lượng
+ - tạo hàm sử lí xóa sản phẩm trong giỏ hàng.
+ - tạo hàm sử lí xóa tất cả sản phẩm trong giỏ hàng.
+ - tỉnh tổng tiền thông qua vòng lặp
+
+ 7. lọc sản phẩm theo tiêu chí - số sản phẩm trên 1 trang
+ - Tạo lọc theo value wire:model vào shopComponent viết hàm sử lí dữ liệu lọc và phân trang
+
+ 8. Lọc sản phẩm theo danh mục
+ - 
