@@ -6,7 +6,7 @@
             <div class="wrap-list-cate">
                 <input type="hidden" name="product-cat" value="{{ $product_cat }}" id="product-cate">
                 <input type="hidden" name="product_cat_id" value="{{ $product_cat_id }}" id="product-cate-id">
-                <a href="#" class="link-control">{{ str_split($product_cat, 12)[0] }}</a>
+                <a href="#" class="link-control">{{ str_split($product_cat,12)[0] }}</a>
                 <ul class="list-cate">
                     <li class="level-0">All Category</li>
                     @foreach($categories as $item)

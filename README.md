@@ -47,4 +47,5 @@ chạy lệnh Artisan:
  - Tạo lọc theo value wire:model vào shopComponent viết hàm sử lí dữ liệu lọc và phân trang
 
  8. Lọc sản phẩm theo danh mục
- - 
+
+ 9. Tìm kiếm sản phẩm
