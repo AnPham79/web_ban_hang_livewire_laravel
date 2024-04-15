@@ -13,9 +13,21 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        All Categories
+                        <div class="row">
+                            <div class="col-md-6">
+                                All Category
+                            </div>
+                            <div class="col-md-6">
+                               <a href="{{ route('admin.addcategory') }}" class="btn btn-success pull-right">Add new category</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="panel-body">
+                        @if(session()->has('message'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -31,7 +43,13 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->category_name }}</td>
                                         <td>{{ $item->category_slug }}</td>
-                                        <td>Action</td>
+                                        <td><a href="{{ route('admin.editcategory', ['category_slug' => $item->category_slug]) }}">
+                                                <i class="fa fa-edit fa-2x"></i>
+                                            </a>
+                                            <a href="#" wire:click.prevent="deleteCategory({{ $item->id }})">
+                                                <i class="fa fa-times fa-2x text-danger"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
