@@ -49,3 +49,11 @@ chạy lệnh Artisan:
  8. Lọc sản phẩm theo danh mục
 
  9. Tìm kiếm sản phẩm
+
+ 10. Tìm kiếm sản phẩm theo danh mục
+
+ 11. Đăng nhập Admin - CRUD cho categories
+
+ 12. CRUD cho Sản phẩm
+
+ 13. Admin Making Home Page Slider Dynamic
