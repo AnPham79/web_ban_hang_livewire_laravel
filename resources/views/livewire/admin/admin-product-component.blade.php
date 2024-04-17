@@ -37,6 +37,7 @@
                                 <th>Name</th>
                                 <th>Stock</th>
                                 <th>Price</th>
+                                <th>Sale</th>
                                 <th>Category</th>
                                 <th>Date</th>
                                 <th>Action</th>
@@ -50,6 +51,7 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->stock_status }}</td>
                                     <td>{{ $item->regular_price }}</td>
+                                    <td>{{ $item->sale_price }}</td>
                                     <td>{{ $item->category->category_name }}</td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>

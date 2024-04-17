@@ -1,5 +1,13 @@
 <main id="main" class="main-site">
-
+    <style>
+        .regprice {
+            font-weight: 300;
+            font-size: 13px !important;
+            color: #aaaaaa !important;
+            text-decoration: line-through;
+            padding-left: 10px;
+        }
+    </style>
     <div class="container">
 
         <div class="wrap-breadcrumb">
@@ -37,7 +45,15 @@
                         <div class="wrap-social">
                             <a class="link-socail" href="#"><img src="{{ asset('assets/images/social-list.png') }}" alt=""></a>
                         </div>
-                        <div class="wrap-price"><span class="product-price">{{ $data->regular_price }} $</span></div>
+                        @if ($data->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                            <div class="wrap-price">
+                                <span class="product-price">{{ $data->sale_price }} $</span>
+                                <span class="product-price regprice">{{ $data->regular_price }} $</span>
+                            </div>
+                        @else
+                            <div class="wrap-price"><span class="product-price">{{ $data->regular_price }} $</span></div>
+                        @endif
+                        
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: <b>{{ $data->stock_status }}</b></p>
                         </div>
@@ -51,7 +67,11 @@
                             </div>
                         </div>
                         <div class="wrap-butons">
-                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $data->id }}', '{{ $data->name }}', '{{ $data->regular_price }}')">Thêm vào giỏ hàng</a>
+                            @if ($data->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $data->id }}', '{{ $data->name }}', '{{ $data->sale_price }}')">Add to cart</a>
+                            @else
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $data->id }}', '{{ $data->name }}', '{{ $data->regular_price }}')">Add to cart</a>
+                            @endif
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-compare">Add Compare</a>
                                 <a href="#" class="btn btn-wishlist">Add Wishlist</a>
