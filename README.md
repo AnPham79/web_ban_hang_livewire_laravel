@@ -57,3 +57,31 @@ chạy lệnh Artisan:
  12. CRUD cho Sản phẩm
 
  13. Admin Making Home Page Slider Dynamic
+
+ 14. Hiện sản phẩm mới mua ở mục sản phẩm mới.
+
+ 15. Hiện sản phẩm ở danh mục.
+
+ 16. Hiện sản phẩm giảm giá
+
+ 17. set thời gian sale ( bootrap datetime picker và moment.js)
+
+ 18. thêm lọc giá bằng  (no ui slider cdn )
+
+ 19. Thêm validate cho categories
+
+ 20. Thêm validate cho products
+
+ 21. Tạo tên ảnh sản phẩm, danh mục, banner bằng thư viện carbon:now + extension để kiểm tra tồn tại của tên ảnh.
+
+ 22. thêm danh sách yêu thích ( wish list ).
+
+ 23. Tự động load khi thêm vào danh sách wish list ( emitto )
+
+ 24. remove sản phẩm trong wish list
+
+ 25. Xem sản phẩm trong wish list
+
+ 26. Move Product From Wishlist to Cart and Make Quantity Working on Details
+
+
