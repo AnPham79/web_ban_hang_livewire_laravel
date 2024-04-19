@@ -12,7 +12,6 @@
             <div class=" main-content-area">
 
                 <div class="wrap-iten-in-cart">
-                    <h3 class="title-box" style="border-bottom: 1px solid; padding-bottom: 15px;">{{ Cart::instance('SaveForLater')->count() }} item(s) Save For Later</h3>
                     @if(Session::has('success'))
                         <div class="alert alert-success">
                             <strong>Success</strong> {{ Session::get('success_message') }}
@@ -74,6 +73,14 @@
                             <input class="frm-input " name="have-code" id="have-code" value=""
                                 type="checkbox"><span>I have promo code</span>
                         </label>
+                        <div class="summary-item">
+                            <h4 class="coupon-box">Coupon Code</h4>
+                            <p class="row-in-form">
+                                <label for="coupon-code">Enter your coupon code</label>
+                                <input type="text" name="coupon-code">
+                            </p>
+                            <button type="submit" class="btn btn-small">Apply</button>
+                        </div>
                         <a class="btn btn-checkout" href="checkout.html">Check out</a>
                         <a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right"
                                 aria-hidden="true"></i></a>
@@ -137,7 +144,7 @@
                             <div class="product product-style-2 equal-elem ">
                                 <div class="product-thumnail">
                                     <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_04.jpg" width="214"
+                                        <figure><img src="{{ asset('assets/images/products/digital_4.jpg') }}" width="214"
                                                 height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
                                         </figure>
                                     </a>
@@ -155,162 +162,6 @@
                                 </div>
                             </div>
 
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_17.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">sale</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">$168.00</p>
-                                        </ins> <del>
-                                            <p class="product-price">$250.00</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_15.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">new</span>
-                                        <span class="flash-item sale-label">sale</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">$168.00</p>
-                                        </ins> <del>
-                                            <p class="product-price">$250.00</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_01.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Bestseller</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_21.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_03.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item sale-label">sale</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><ins>
-                                            <p class="product-price">$168.00</p>
-                                        </ins> <del>
-                                            <p class="product-price">$250.00</p>
-                                        </del></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_04.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">new</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                </div>
-                            </div>
-
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/products/digital_05.jpg" width="214"
-                                                height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item bestseller-label">Bestseller</span>
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                            Omnidirectional Speaker [White]</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                </div>
-                            </div>
                         </div>
                     </div><!--End wrap-products-->
                 </div>

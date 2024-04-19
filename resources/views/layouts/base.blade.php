@@ -90,6 +90,9 @@
 														<a title="Manager Home Slider" href="{{ route('admin.homeslider') }}">Manager Home Slider</a>
 													</li>
 													<li class="menu-item" >
+														<a title="Manager Coupons" href="{{ route('admin.coupons') }}">Manager coupons</a>
+													</li>
+													<li class="menu-item" >
 														<a title="Manager Home Category" href="{{ route('admin.homecategories') }}">Manager Home Slider</a>
 													</li>
 													<li class="menu-item" >
