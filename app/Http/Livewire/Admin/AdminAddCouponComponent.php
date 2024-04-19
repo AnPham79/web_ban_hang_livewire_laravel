@@ -12,25 +12,8 @@ class AdminAddCouponComponent extends Component
     public $value;
     public $cart_value;
 
-    public function updated($fields)
-    {
-        $this->validate($fields, [
-            'code' => 'required|unique:coupons',
-            'type' => 'required',
-            'value' => 'required|numeric',
-            'cart_value' => 'required|numeric'
-        ]);
-    }
-
     public function storeCoupon()
     {
-        $this->validate([
-            'code' => 'required|unique:coupons',
-            'type' => 'required',
-            'value' => 'required|numeric',
-            'cart_value' => 'required|numeric'
-        ]);
-
         $coupon = new Coupon;
         $coupon->code = $this->code;
         $coupon->type = $this->type;
