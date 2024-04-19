@@ -84,4 +84,8 @@ chạy lệnh Artisan:
 
  26. Move Product From Wishlist to Cart and Make Quantity Working on Details
 
+ 27. add wish list to cart
+
+ 28. Add SaveForLater Option on Cart Page
+
 

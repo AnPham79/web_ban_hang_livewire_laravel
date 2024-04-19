@@ -11,19 +11,34 @@ use Livewire\WithPagination;
 class DetailComponent extends Component
 {
     public $slug;
+    public $qty = 1;
 
     //  chúng ta sử dụng phương thức mount() để nhận giá trị của $slug từ bên ngoài và gán nó vào thuộc tính $slug của component.
     // mout là 1 phương thức mạnh của livewire cung cấp
     public function mount($slug) {
         $this->slug = $slug;
+        $this->qty = 1;
     }
 
     use WithPagination;
 
     public function store($product_id, $product_name, $product_price) {
-        Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        Cart::add($product_id, $product_name, $this->qty, $product_price)->associate('App\Models\Product');
         session()->flash('success_message', 'Item added in cart');
         return redirect()->route('product.cart');
+    }
+
+    public function increaseQuantity()
+    {
+        $this->qty++;
+    }
+
+    public function decreaseQuantity()
+    {
+        if($this->qty > 1)
+        {
+            $this->qty--;
+        }
     }
 
     public function render()
