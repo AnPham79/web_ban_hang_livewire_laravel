@@ -53,7 +53,7 @@ use App\Http\Livewire\User\UserDashboardComponent;
 
 Route::get('/', HomeComponent::class);
 
-Route::get('/checkout', CheckoutComponent::class);
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 
 Route::get('/cart', CartComponent::class)->name('product.cart');
 
