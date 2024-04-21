@@ -36,6 +36,7 @@
                                     <th>Coupon type</th>
                                     <th>Coupon value</th>
                                     <th>cart value</th>
+                                    <th>Expiry Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -51,6 +52,7 @@
                                             <td>{{ $coupon->value }} %</td>
                                         @endif
                                         <td>{{ $coupon->cart_value }}</td>
+                                        <td>{{ $coupon->expiry_date }}</td>
                                         <td><a href="{{ route('admin.editcoupon', ['coupon_id' => $coupon->id]) }}">
                                                 <i class="fa fa-edit fa-2x"></i>
                                             </a>
