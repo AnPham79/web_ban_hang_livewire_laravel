@@ -100,5 +100,17 @@ chạy lệnh Artisan:
 
  34. Page Cảm ơn.
 
+ 35. Quản lí hóa đơn admin.
+
+ 36. Xem chi tiết hóa đơn.
+
+ 37. Quản lí hóa đơn của user.
+
+ 38. Hủy đơn (user).
+
+ 39. Cập nhật trạng thái đơn ( admin ).
+
+ 40. Thây đổi mật khẩu.
+
 
 

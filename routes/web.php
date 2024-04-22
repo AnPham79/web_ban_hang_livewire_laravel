@@ -1,5 +1,5 @@
 <?php
-
+// admin zone
 use App\Http\Livewire\Admin\AdminDashboardComposer;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
@@ -20,10 +20,12 @@ use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 
 use App\Http\Livewire\Admin\AdminSaleComponent;
 
-use App\Http\Livewire\ThankyouComponent;
+use App\Http\Livewire\Admin\AdminOrderComponent;
+use App\Http\Livewire\Admin\AdminOrderDetailComponent;
 
 use Illuminate\Support\Facades\Route;
 
+// user zone
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\AdminCategoryComponent;
@@ -35,7 +37,11 @@ use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\AboutComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\SearchComponent;
+use App\Http\Livewire\ThankyouComponent;
 
+// user zone private
+use App\Http\Livewire\User\UserOrderComponent;
+use App\Http\Livewire\User\UserOrderDetailComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 
 /*
@@ -74,15 +80,16 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 Route::get('/thank-you', ThankyouComponent::class)->name('thank-you');
 
 
-// Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 // For user
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/orders', UserOrderComponent::class)->name('user.orders'); 
+    Route::get('/user/orders/{order_id}', UserOrderDetailComponent::class)->name('user.orderdetails');
 });
 
 // For admin
@@ -109,4 +116,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/admin/sale', AdminSaleComponent::class)->name('admin.sale');
 
     Route::get('/wishlist', WishlistComponent::class)->name('product.wishlist');
+
+    Route::get('/admin/orders', AdminOrderComponent::class)->name('admin.orders');
+    Route::get('/admin/orders/{order_id}', AdminOrderDetailComponent::class)->name('admin.orderdetails');
 });

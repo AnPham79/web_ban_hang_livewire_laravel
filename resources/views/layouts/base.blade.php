@@ -93,6 +93,9 @@
 														<a title="Manager Coupons" href="{{ route('admin.coupons') }}">Manager coupons</a>
 													</li>
 													<li class="menu-item" >
+														<a title="Manager Order" href="{{ route('admin.orders') }}">Manager orders</a>
+													</li>
+													<li class="menu-item" >
 														<a title="Manager Home Category" href="{{ route('admin.homecategories') }}">Manager Home Slider</a>
 													</li>
 													<li class="menu-item" >
@@ -112,6 +115,9 @@
 												<ul class="submenu curency" >
 													<li class="menu-item" >
 														<a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+													</li>
+													<li class="menu-item" >
+														<a title="Orders history" href="{{ route('user.orders') }}">Orders history</a>
 													</li>
 													<li class="menu-item">
 														<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
