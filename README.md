@@ -41,51 +41,64 @@ chạy lệnh Artisan:
  - tạo hàm sử lí tăng giảm số lượng
  - tạo hàm sử lí xóa sản phẩm trong giỏ hàng.
  - tạo hàm sử lí xóa tất cả sản phẩm trong giỏ hàng.
- - tỉnh tổng tiền thông qua vòng lặp
+ - tỉnh tổng tiền thông qua vòng lặp.
 
- 7. lọc sản phẩm theo tiêu chí - số sản phẩm trên 1 trang
- - Tạo lọc theo value wire:model vào shopComponent viết hàm sử lí dữ liệu lọc và phân trang
+ 7. lọc sản phẩm theo tiêu chí - số sản phẩm trên 1 trang.
+ - Tạo lọc theo value wire:model vào shopComponent viết hàm sử lí dữ liệu lọc và phân trang.
 
- 8. Lọc sản phẩm theo danh mục
+ 8. Lọc sản phẩm theo danh mục.
 
- 9. Tìm kiếm sản phẩm
+ 9. Tìm kiếm sản phẩm.
 
- 10. Tìm kiếm sản phẩm theo danh mục
+ 10. Tìm kiếm sản phẩm theo danh mục.
 
- 11. Đăng nhập Admin - CRUD cho categories
+ 11. Đăng nhập Admin - CRUD cho categories.
 
- 12. CRUD cho Sản phẩm
+ 12. CRUD cho Sản phẩm.
 
- 13. Admin Making Home Page Slider Dynamic
+ 13. Admin Making Home Page Slider Dynamic.
 
  14. Hiện sản phẩm mới mua ở mục sản phẩm mới.
 
  15. Hiện sản phẩm ở danh mục.
 
- 16. Hiện sản phẩm giảm giá
+ 16. Hiện sản phẩm giảm giá.
 
- 17. set thời gian sale ( bootrap datetime picker và moment.js)
+ 17. set thời gian sale ( bootrap datetime picker và moment.js).
 
- 18. thêm lọc giá bằng  (no ui slider cdn )
+ 18. thêm lọc giá bằng  (no ui slider cdn ).
 
- 19. Thêm validate cho categories
+ 19. Thêm validate cho categories.
 
- 20. Thêm validate cho products
+ 20. Thêm validate cho products.
 
  21. Tạo tên ảnh sản phẩm, danh mục, banner bằng thư viện carbon:now + extension để kiểm tra tồn tại của tên ảnh.
 
  22. thêm danh sách yêu thích ( wish list ).
 
- 23. Tự động load khi thêm vào danh sách wish list ( emitto )
+ 23. Tự động load khi thêm vào danh sách wish list ( emitto ).
 
- 24. remove sản phẩm trong wish list
+ 24. remove sản phẩm trong wish list.
 
- 25. Xem sản phẩm trong wish list
+ 25. Xem sản phẩm trong wish list.
 
- 26. Move Product From Wishlist to Cart and Make Quantity Working on Details
+ 26. Move Product From Wishlist to Cart and Make Quantity Working on Details.
 
- 27. add wish list to cart
+ 27. add wish list to cart.
 
- 28. Add SaveForLater Option on Cart Page
+ 28. Add SaveForLater Option on Cart Page.
+
+ 29. Áp Coupon vào đơn hàng.
+
+ 30. Thanh toán.
+
+ 31. Hóa đơn.
+
+ 32. Chi tiết hóa đơn.
+
+ 33. Địa chỉ giao hàng.
+
+ 34. Page Cảm ơn.
+
 
 

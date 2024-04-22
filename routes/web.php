@@ -20,6 +20,8 @@ use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 
 use App\Http\Livewire\Admin\AdminSaleComponent;
 
+use App\Http\Livewire\ThankyouComponent;
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\HomeComponent;
@@ -68,6 +70,8 @@ Route::get('/product/{slug}', DetailComponent::class)->name('product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 
 Route::get('/search', SearchComponent::class)->name('product.search');
+
+Route::get('/thank-you', ThankyouComponent::class)->name('thank-you');
 
 
 // Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {

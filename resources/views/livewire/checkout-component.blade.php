@@ -9,9 +9,8 @@
                     <li class="item-link"><span>Checkout</span></li>
                 </ul>
             </div>
-            <form action="#" method="get" name="frm-billing">
             <div class=" main-content-area">
-                <form action="">
+                <form action="" wire:submit.prevent="placeOrder">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="wrap-address-billing">
@@ -58,7 +57,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="city">Province<span>*</span></label>
-                                        <input id="city" type="text" name="provine" value="" placeholder="City name"  wire:model="provine">
+                                        <input id="city" type="text" name="province" value="" placeholder="City name"  wire:model="province">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="city">Town / City<span>*</span></label>
@@ -120,7 +119,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="city">Province<span>*</span></label>
-                                        <input id="city" type="text" name="provine" value="" placeholder="City name"  wire:model="s_provine">
+                                        <input id="city" type="text" name="province" value="" placeholder="City name"  wire:model="s_province">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="city">Town / City<span>*</span></label>
@@ -158,8 +157,9 @@
                                     <span class="payment-desc">card if you don't have a paypal account</span>
                                 </label>
                             </div>
-                            <p class="summary-info grand-total"><span>Grand Total</span> <span
-                                    class="grand-total-price">$100.00</span></p>
+                            @if(Session::has('checkout'))
+                                <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">${{ session()->get('checkout')['total'] }}</span></p>
+                            @endif
                             <button class="btn btn-medium" type="submit">Place order now</button>
                         </div>
                         <div class="summary-item shipping-method">

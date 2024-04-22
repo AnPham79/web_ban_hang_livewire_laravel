@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Shipping;
 use App\Models\Transaction;
 use App\Models\User;
+use cart;
 use Illuminate\Support\Facades\Auth;
 
 class CheckoutComponent extends Component
@@ -36,6 +37,8 @@ class CheckoutComponent extends Component
     public $s_country;
     public $s_zipcode;
 
+    public $thankyou;
+
     public $paymentmode;
 
     public function placeOrder()
@@ -47,14 +50,14 @@ class CheckoutComponent extends Component
         $order->tax = session()->get('checkout')['tax'];
         $order->total = session()->get('checkout')['total'];
 
-        $order->firstname = $this->firstname;
-        $order->lastname = $this->lastname;
+        $order->first_name = $this->firstname;
+        $order->last_name = $this->lastname;
         $order->email = $this->email;
         $order->mobile = $this->mobile;
         $order->line1 = $this->line1;
         $order->line2 = $this->line2;
         $order->city = $this->city;
-        $order->province = $this->provine;
+        $order->province = $this->province;
         $order->country = $this->country;
         $order->zipcode = $this->zipcode;
         $order->status = 'ordered';
@@ -64,27 +67,29 @@ class CheckoutComponent extends Component
         foreach(Cart::instance('cart')->content() as $item) 
         {
             $orderItem = new OrderItem();
-            $orderItem = $product_id = $item->id;
-            $orderItem = $order_id = $order->id;
-            $orderItem = $price = $item->price;
-            $orderItem = $quantity = $item->qty;
+            $orderItem->product_id = $item->id;
+            $orderItem->order_id = $order->id;
+            $orderItem->price = $item->price;
+            $orderItem->quantity = $item->qty;
             $orderItem->save();
         }
+
+        $order_id = $order->id;
 
         if($this->ship_to_different) 
         {
             $shipping = new Shipping();
             $shipping->order_id = $order_id;
-            $shipping->s_firstname = $this->s_firstname;
-            $shipping->s_lastname = $this->s_lastname;
-            $shipping->s_email = $this->s_email;
-            $shipping->s_mobile = $this->s_mobile;
-            $shipping->s_line1 = $this->s_line1;
-            $shipping->s_line2 = $this->s_line2;
-            $shipping->s_city = $this->s_city;
-            $shipping->s_province = $this->s_provine;
-            $shipping->s_country = $this->s_country;
-            $shipping->s_zipcode = $this->s_zipcode;
+            $shipping->first_name = $this->s_firstname;
+            $shipping->last_name = $this->s_lastname;
+            $shipping->email = $this->s_email;
+            $shipping->mobile = $this->s_mobile;
+            $shipping->line1 = $this->s_line1;
+            $shipping->line2 = $this->s_line2;
+            $shipping->city = $this->s_city;
+            $shipping->province = $this->s_province;
+            $shipping->country = $this->s_country;
+            $shipping->zipcode = $this->s_zipcode;
             $shipping->save();
         }
 
@@ -99,6 +104,8 @@ class CheckoutComponent extends Component
 
         Cart::instance('cart')->destroy();
         session()->forget('checkout');
+
+        return redirect()->route('thank-you');
     }
 
     public function render()
