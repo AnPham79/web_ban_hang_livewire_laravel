@@ -2,6 +2,47 @@
     <div class="container" style="padding: 30px 0px;">
         <div class="row">
             <div class="col-md-12">
+                @if(Session::has('message'))
+                    <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                @endif
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                Order Detail
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{ route('admin.orders') }}" class="btn btn-success pull-right">All order</a>
+                                @if($orders->status == 'ordered')
+                                    <a href="#" wire:click.prevent="cancelOrder" class="btn btn-danger pull-right" style="margin:0px 5px;">Cancel Order</a>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <th>Order Id</th>
+                                <td>{{ $orders->id }}</td>
+                                <th>Order date</th>
+                                <td>{{ $orders->created_at }}</td>
+                                <th>Order status</th>
+                                <td>{{ $orders->status }}</td>
+                                @if($orders->status == 'delivered')
+                                    <th>Delivered Date</th>
+                                    <td>{{ $orders->delivered_date }}</td>
+                                @elseif($orders->status == 'canceled')
+                                    <th>Canceled Date</th>
+                                    <td>{{ $orders->canceled_date }}</td>
+                                @endif
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">

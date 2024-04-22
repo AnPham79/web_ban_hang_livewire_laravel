@@ -23,6 +23,8 @@ use App\Http\Livewire\Admin\AdminSaleComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailComponent;
 
+use App\Http\Livewire\Admin\AdminContactComponent;
+
 use Illuminate\Support\Facades\Route;
 
 // user zone
@@ -43,6 +45,7 @@ use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\User\UserOrderComponent;
 use App\Http\Livewire\User\UserOrderDetailComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserChangePasswordComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +92,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
     Route::get('/user/orders', UserOrderComponent::class)->name('user.orders'); 
-    Route::get('/user/orders/{order_id}', UserOrderDetailComponent::class)->name('user.orderdetails');
+    Route::get('/user/orders/{order_id}', UserOrderDetailComponent::class)
+    ->name('user.orderdetails');
+    Route::get('/user/change-password', UserChangePasswordComponent::class)->name('user.change-password'); 
 });
 
 // For admin
@@ -119,4 +124,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/admin/orders', AdminOrderComponent::class)->name('admin.orders');
     Route::get('/admin/orders/{order_id}', AdminOrderDetailComponent::class)->name('admin.orderdetails');
+
+    Route::get('/admin/contact', AdminContactComponent::class)->name('admin.contact');
 });

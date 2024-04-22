@@ -16,6 +16,9 @@
                         All Order
                     </div>
                     <div class="panel-body">
+                        @if(Session::has('message'))
+                            <div class="alert aler-success" role="alert">{{ Session::get('message') }}</div>
+                        @endif
                         <table class="table table-triped">
                             <thead>
                                 <tr>
@@ -32,6 +35,7 @@
                                     <th>Status</th>
                                     <th>Order Date</th>
                                     <th>Action</th>
+                                    <th col-span="2" class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,6 +54,19 @@
                                         <td>{{ $item->status }}</td>
                                         <td>{{ $item->created_at }}</td>
                                         <td><a href="{{ route('admin.orderdetails', ['order_id' => $item->id]) }}" class='btn btn-info btn-sm'>Detail</a></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" type="button">Status
+                                                    <span class="caret">
+                                                        
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" wire:click.prevent="updateOrderStatus({{ $item->id }}, 'delivered')">Delivered</a></li>
+                                                    <li><a href="#" wire:click.prevent="updateOrderStatus({{ $item->id }}, 'canceled')">Canceled</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

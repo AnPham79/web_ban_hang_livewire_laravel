@@ -112,5 +112,7 @@ chạy lệnh Artisan:
 
  40. Thây đổi mật khẩu.
 
+ 41. Liên hệ.
+
 
 
