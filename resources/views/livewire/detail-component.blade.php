@@ -21,14 +21,25 @@
             <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
                 <div class="wrap-product-detail">
                     <div class="detail-media">
-                        <div class="product-gallery">
-                          <ul class="slides">
-                            <li data-thumb="{{asset('assets/images/products') }}/{{ $data->image }}">
-                                <img src="{{ asset('assets/images/products')}}/{{ $data->image }}" alt="{{ $data->name }}" />
-                            </li>
-                          </ul>
+                        <div class="product-gallery" wire:ignore>
+                            <ul class="slides">
+                                <li data-thumb="{{ asset('assets/images/products') }}/{{ $data->image }}">
+                                    <img src="{{ asset('assets/images/products') }}/{{ $data->image }}" alt="{{ $data->name }}" />
+                                </li>
+                                @php
+                                    $images = explode(',', $data->images);
+                                @endphp
+                                @foreach($images as $item)
+                                    @if($item)
+                                        <li data-thumb="{{ asset('assets/images/products') }}/{{ $item }}">
+                                            <img src="{{ asset('assets/images/products') }}/{{ $item }}" alt="{{ $data->name }}" />
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
+
                     <div class="detail-info">
                         <div class="product-rating">
                             <i class="fa fa-star" aria-hidden="true"></i>

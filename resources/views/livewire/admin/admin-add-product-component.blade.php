@@ -108,6 +108,13 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="" class="col-md-4 control-label">Product Gallery</label>
+                        <div class="col-md-4">
+                            <input type="file" name="images" placeholder="Product Name" class="form-control input-md" wire:model="images" multiple />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="" class="col-md-4 control-label">Category</label>
                         <div class="col-md-4">
                             <select class="form-control" wire:model="category_id">
